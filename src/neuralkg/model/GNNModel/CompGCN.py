@@ -240,7 +240,7 @@ class CompGCNCov(nn.Module):
         self.device = x.device
         g = g.local_var()
         g.ndata['h'] = x
-        g.edata['type'] = edge_type
+        g.edata['type'] = edge_type.long()
         g.edata['norm'] = edge_norm
         if self.rel_wt is None:
             self.rel = rel_repr
