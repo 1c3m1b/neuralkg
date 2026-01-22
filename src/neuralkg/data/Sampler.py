@@ -503,7 +503,7 @@ class GraphSampler(RevSampler):
         graph.add_edges(head, tail)
         node_norm = self.comp_deg_norm(graph, power)
         edge_norm = self.node_norm_to_edge_norm(graph,node_norm)
-        rela = torch.tensor(rela)
+        rela = torch.tensor(rela, dtype=torch.long)
         return graph, rela, edge_norm
 
     def comp_deg_norm(self, graph, power=-1):
